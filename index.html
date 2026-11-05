@@ -85,6 +85,65 @@ img{display:block;max-width:100%}
   .ghost .lbl{display:none}
 }
 
+/* CG wordmark */
+.cgmark{display:flex;align-items:flex-start;gap:6px;text-decoration:none;color:#fff;font-family:"Playfair Display",Georgia,serif;flex:none}
+.cgmark .plus{font-size:22px;line-height:1;color:var(--ice);margin-top:2px;font-weight:400}
+.cgmark .stk{line-height:1.12}
+.cgmark .stk span{display:block}
+.cgmark .s1,.cgmark .s2{font-size:11px;color:var(--ice);font-weight:400}
+.cgmark .s3,.cgmark .s4{font-size:13.5px;font-weight:700}
+.cgmark .s4{text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1.5px}
+.cgmark.ink{color:var(--text)} .cgmark.ink .plus,.cgmark.ink .s1,.cgmark.ink .s2{color:var(--brand)}
+.brand-sep{width:1px;height:36px;background:rgba(255,255,255,.18);flex:none}
+.brand-prod{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ice);line-height:1.35;flex:none}
+@media (max-width:1060px){.brand-sep,.brand-prod{display:none}}
+.pop{position:absolute;right:0;top:46px;width:250px;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-lg);padding:6px;display:none;z-index:50}
+.pop.show{display:block}
+.pop button{display:flex;gap:10px;align-items:flex-start;width:100%;border:0;background:none;text-align:left;padding:9px 10px;border-radius:9px;font-size:14px}
+.pop button:hover{background:var(--surface-2)}
+.pop button small{display:block;color:var(--muted);font-size:12.5px}
+.pop svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--brand)}
+
+/* synthesis */
+.syn{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);margin-bottom:38px}
+.syn>div{padding:18px 22px;border-left:1px solid var(--border);animation:rise .4s both}
+.syn>div:first-child{border-left:0}
+.syn .lb{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);display:flex;gap:8px;align-items:center}
+.syn .lb i{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:var(--brand-soft)}
+.syn .lb svg{width:13px;height:13px}
+.syn p{margin:8px 0 0;font-size:15.5px;line-height:1.5}
+@media (max-width:900px){.syn{grid-template-columns:1fr}.syn>div{border-left:0;border-top:1px solid var(--border)}.syn>div:first-child{border-top:0}}
+
+/* pulse bars */
+.pr{display:grid;grid-template-columns:118px minmax(0,1fr) 22px;gap:10px;align-items:center;font-size:13.5px;margin:7px 0}
+.pr .tr{height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+.pr .fl{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--peri),var(--brand));transition:width .6s ease}
+.pr b{text-align:right;font-variant-numeric:tabular-nums;font-size:13px}
+.pulse-sub{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:14px 0 4px}
+
+/* follow */
+.follow-tg{display:inline-flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--surface)}
+.follow-tg button{border:0;background:none;padding:6px 13px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap}
+.follow-tg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.bell{position:absolute;left:10px;top:10px;z-index:2;width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(10,16,40,.45);backdrop-filter:blur(6px);color:#fff;display:grid;place-items:center;transition:transform .15s,background .15s}
+.bell:hover{transform:scale(1.1)}
+.bell[aria-pressed="true"]{background:#fff;color:var(--navy)}
+.bell svg{width:15px;height:15px}
+.ccard{cursor:pointer}
+
+@media print{
+  .bar,.clocks,.mapcard,#carPrev,#carNext,.fbar,.toggle,.scrim,.drawer,.tip,.kb,.bell,.follow-tg,.star,.chev,#hiddenNote,.exemplar{display:none!important}
+  body{background:#fff;color:#111}
+  .hero{background:none!important;color:#111}.hero::before{display:none}.hero *{color:#111!important}
+  .hero-in{grid-template-columns:1fr;padding-top:0}.stat{border-color:#ccc}
+  .reveal{opacity:1!important;transform:none!important}
+  .car{display:block;overflow:visible}.tcard{min-height:0;margin-bottom:8px;break-inside:avoid;background:none;box-shadow:none;border:1px solid #ccc}
+  .tcard .bgimg,.tcard::after{display:none}.tcard .in{position:static}.tcard *{color:#111!important}
+  .cols{grid-template-columns:1fr}.side{position:static}
+  .more{grid-template-rows:1fr!important}.it{break-inside:avoid;animation:none}
+  .gal{grid-template-columns:repeat(5,1fr)}
+}
+
 /* ===== hero ===== */
 .hero{position:relative;color:#fff;background:radial-gradient(1200px 500px at 80% -10%,rgba(114,135,226,.35),transparent 60%),radial-gradient(700px 400px at 0% 110%,rgba(192,214,223,.18),transparent 60%),linear-gradient(180deg,var(--navy-ink),var(--navy-deep) 70%,#1d2f72);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
@@ -340,13 +399,23 @@ footer a{color:var(--muted)}
 <!-- ===== top bar ===== -->
 <div class="bar">
   <div class="wrap bar-in">
-    <a class="logo" href="#top" aria-label="Back to top">
-      <div class="logo-mark">CG</div>
-      <div class="logo-t"><b>Columbia Global</b><span>Morning Intelligence</span></div>
+    <a class="cgmark" href="#top" aria-label="Columbia Global, back to top">
+      <span class="plus">+</span>
+      <span class="stk"><span class="s1">Thinking</span><span class="s2">Doing</span><span class="s3">Columbia</span><span class="s4">Global</span></span>
     </a>
+    <span class="brand-sep" aria-hidden="true"></span>
+    <span class="brand-prod">Morning<br>Intelligence</span>
     <div class="seg" role="tablist" aria-label="Team view" id="seg"><div class="pill" id="pill"></div></div>
     <div class="bar-tools">
       <button class="ghost" id="searchBtn" type="button" aria-label="Search developments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="lbl">Search</span></button>
+      <div style="position:relative">
+        <button class="ghost" id="shareBtn" type="button" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v14"/></svg><span class="lbl">Share</span></button>
+        <div class="pop" id="sharePop" role="menu">
+          <button role="menuitem" id="copyDigest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Copy email summary<small>Plain text of this view, ready to paste</small></span></button>
+          <button role="menuitem" id="printBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg><span>Print or save as PDF<small>Clean layout, all items expanded</small></span></button>
+          <button role="menuitem" id="copyLink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg><span>Copy link to this view<small>Opens on the same team view</small></span></button>
+        </div>
+      </div>
       <button class="ghost" id="themeBtn" type="button" aria-label="Toggle light or dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </div>
   </div>
@@ -373,6 +442,7 @@ footer a{color:var(--muted)}
 </header>
 
 <main class="wrap">
+  <section class="syn" id="syn" aria-label="Summary"></section>
   <!-- top five -->
   <section class="sec reveal" aria-labelledby="t5h">
     <div class="sec-h">
@@ -389,7 +459,10 @@ footer a{color:var(--muted)}
   <section class="sec reveal" aria-labelledby="ch">
     <div class="sec-h">
       <div><div class="eyebrow">Live local time and weather</div><h2 id="ch">The ten Centers</h2></div>
-      <p id="weatherNote" style="max-width:36ch;text-align:right"></p>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+        <div class="follow-tg" role="group" aria-label="Which Centers"><button data-mine="0" aria-pressed="true">All Centers</button><button data-mine="1" aria-pressed="false" id="mineBtn">My Centers</button></div>
+        <p id="weatherNote" style="max-width:40ch;text-align:right;margin:0;font-size:13px;color:var(--muted)"></p>
+      </div>
     </div>
     <div class="gal" id="gal"></div>
   </section>
@@ -426,6 +499,10 @@ footer a{color:var(--muted)}
         <div class="panel-h"><div><h3 id="dh">Dates ahead</h3><small>Holidays and planned disruptions</small></div></div>
         <div class="panel-b"><ul class="tl" id="dates"></ul></div>
       </section>
+      <section class="panel" aria-labelledby="ph">
+        <div class="panel-h"><div><h3 id="ph">Coverage pulse</h3><small>What this view is made of</small></div></div>
+        <div class="panel-b" id="pulse"></div>
+      </section>
       <section class="panel" aria-labelledby="fh">
         <div class="panel-h"><div><h3 id="fh">Follow-ups</h3><small>Saved on this device</small></div></div>
         <div class="panel-b"><div class="fu-h" id="fuh"></div><ul class="fu" id="followups"></ul></div>
@@ -448,7 +525,8 @@ footer a{color:var(--muted)}
 
 <footer>
   <div class="wrap">
-    <p>Each development lists its outlet and publication date. Keyboard: <b>1</b> to <b>4</b> switch team view, <b>/</b> search, <b>Esc</b> close a panel, <b>←</b> <b>→</b> move between cities in a city panel.</p>
+    <div class="cgmark ink" style="margin-bottom:12px"><span class="plus">+</span><span class="stk"><span class="s1">Thinking</span><span class="s2">Doing</span><span class="s3">Columbia</span><span class="s4">Global</span></span></div>
+    <p>Each development lists its outlet and publication date. Keyboard: <b>1</b> to <b>4</b> switch team view, <b>/</b> search, <b>M</b> toggle My Centers, <b>Esc</b> close a panel, <b>←</b> <b>→</b> move between cities in a city panel.</p>
     <p id="credits"></p>
     <p>Exemplar prepared by Anurag Mishra, November 2026.</p>
   </div>
@@ -538,14 +616,14 @@ const DATES=[
  {d:"Thu 19 Nov",city:"Mumbai",what:"Six-hour airport flight suspension",lenses:["ops"]}
 ];
 const FOLLOW=[
- {id:"f1",text:"Check Istanbul travel and airport transfers",lenses:["ops"]},
- {id:"f2",text:"Check Athens weather and Metro closures",lenses:["ops"]},
- {id:"f3",text:"Check Mumbai rail blocks for today's travel",lenses:["ops"]},
- {id:"f4",text:"Confirm any residual effect of the Paris protests",lenses:["ops"]},
- {id:"f5",text:"Read the Jerusalem Post op-ed and share with communications colleagues",lenses:["comms"]},
- {id:"f6",text:"Confirm Nairobi partner activities can resume on 2 November",lenses:["academic"]},
- {id:"f7",text:"Note the Rio holiday when scheduling with the Center",lenses:["comms","ops"]},
- {id:"f8",text:"Consider the Beijing, Paris and Santiago examples for programming ideas",lenses:["academic","comms"]}
+ {id:"f1",cities:["Istanbul"],text:"Check Istanbul travel and airport transfers",lenses:["ops"]},
+ {id:"f2",cities:["Athens"],text:"Check Athens weather and Metro closures",lenses:["ops"]},
+ {id:"f3",cities:["Mumbai"],text:"Check Mumbai rail blocks for today's travel",lenses:["ops"]},
+ {id:"f4",cities:["Paris"],text:"Confirm any residual effect of the Paris protests",lenses:["ops"]},
+ {id:"f5",cities:["Tel Aviv"],text:"Read the Jerusalem Post op-ed and share with communications colleagues",lenses:["comms"]},
+ {id:"f6",cities:["Nairobi"],text:"Confirm Nairobi partner activities can resume on 2 November",lenses:["academic"]},
+ {id:"f7",cities:["Rio de Janeiro"],text:"Note the Rio holiday when scheduling with the Center",lenses:["comms","ops"]},
+ {id:"f8",cities:["Beijing","Paris","Santiago"],text:"Consider the Beijing, Paris and Santiago examples for programming ideas",lenses:["academic","comms"]}
 ];
 const CREDITS={
  amman:["David Bjorgen","CC BY 2.5","https://commons.wikimedia.org/wiki/File:Amman_Citadel.jpg"],
@@ -563,14 +641,16 @@ const CREDITS={
 /* ===================== state ===================== */
 const S={lens:"all",levels:new Set(),city:"",cat:"",q:"",group:"city",showOut:false,open:new Set(ITEMS.filter(i=>i.level==="action").map(i=>i.id)),drawer:null};
 const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-let done=store.get("cgb2-done",{}), saved=new Set(store.get("cgb2-saved",[]));
-const L0=store.get("cgb2-lens","all"); if(LENSES.some(l=>l.id===L0)) S.lens=L0;
+let done=store.get("cgb2-done",{}), saved=new Set(store.get("cgb2-saved",[])), follow=new Set(store.get("cgb2-follow",[]));
+S.mine=store.get("cgb2-mine",false)&&follow.size>0;
+const L0=new URLSearchParams(location.search).get("view")||store.get("cgb2-lens","all"); if(LENSES.some(l=>l.id===L0)) S.lens=L0;
 const th=store.get("cgb2-theme",null); if(th) document.documentElement.dataset.theme=th;
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const inL=(x,l=S.lens)=>l==="all"||x.lenses.includes(l);
-const vis=()=>ITEMS.filter(i=>inL(i));
+const mineOk=i=>!S.mine||follow.has(i.city);
+const vis=()=>ITEMS.filter(i=>inL(i)&&mineOk(i));
 const worst=arr=>arr.length?arr.reduce((a,b)=>RANK[a.level]<=RANK[b.level]?a:b).level:null;
 const count=(arr,l)=>arr.filter(i=>i.level===l).length;
 function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),1600)}
@@ -586,6 +666,7 @@ function movePill(){const b=$(`#seg button[data-lens="${S.lens}"]`);if(!b)return
 function setLens(id){
   if(S.lens===id) return;
   S.lens=id;S.showOut=false;store.set("cgb2-lens",id);
+  try{history.replaceState(null,"",id==="all"?location.pathname:`?view=${id}`)}catch(e){}
   document.querySelectorAll("#seg button").forEach(b=>b.setAttribute("aria-selected",b.dataset.lens===id));
   movePill();renderAll(true);
   toast(id==="all"?"Showing the full briefing":`Showing the ${LN[id]} view`);
@@ -695,11 +776,11 @@ async function loadWeather(){
 
 /* ===================== top five ===================== */
 function topFive(){
-  if(S.lens==="all") return ITEMS.filter(i=>i.top).sort((a,b)=>a.top-b.top);
+  if(S.lens==="all"&&!S.mine) return ITEMS.filter(i=>i.top).sort((a,b)=>a.top-b.top);
   return vis().sort((a,b)=>RANK[a.level]-RANK[b.level]||(b.lenses[0]===S.lens)-(a.lenses[0]===S.lens)||(a.top||99)-(b.top||99)).slice(0,5);
 }
 function renderTop(){
-  $("#t5eyebrow").textContent=S.lens==="all"?"Ranked across all teams":`Ranked for ${LN[S.lens]}`;
+  $("#t5eyebrow").textContent=(S.lens==="all"?"Ranked across all teams":`Ranked for ${LN[S.lens]}`)+(S.mine?" · My Centers":"");
   $("#car").innerHTML=topFive().map((i,n)=>`
     <button class="tcard" data-id="${i.id}" style="animation:rise .45s ${n*.06}s both">
       <div class="bgimg" style="background-image:url('${img(i.city)}')"></div>
@@ -727,12 +808,27 @@ function renderGallery(){
   $("#gal").innerHTML=CITIES.map(c=>{
     const it=v.filter(i=>i.city===c);
     const cn=["action","sig","opp"].filter(l=>count(it,l)).map(l=>`<span class="cnt c-${l}">${count(it,l)} ${LEVELS[l].toLowerCase()}</span>`).join("")||`<span class="cnt none">${it.length?it.length+" context":"Nothing in this view"}</span>`;
-    return `<button class="ccard ${it.length?"":"dim"}" data-city="${esc(c)}" aria-label="Open ${esc(c)} details">
-      <div class="ph" style="background-image:url('${img(c)}')"><div class="ring">${ring(it)}</div><div class="nm"><b>${esc(c)}</b><small>${CITY[c].country}</small></div></div>
+    const f=follow.has(c);
+    return `<div class="ccard ${it.length?"":"dim"}" data-city="${esc(c)}" role="button" tabindex="0" aria-label="Open ${esc(c)} details">
+      <div class="ph" style="background-image:url('${img(c)}')"><button class="bell" data-follow="${esc(c)}" aria-pressed="${f}" aria-label="${f?"Unfollow":"Follow"} ${esc(c)}" title="${f?"Following":"Follow this Center"}"><svg viewBox="0 0 24 24" fill="${f?"currentColor":"none"}" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></button><div class="ring">${ring(it)}</div><div class="nm"><b>${esc(c)}</b><small>${CITY[c].country}</small></div></div>
       <div class="meta"><span class="tm">${localTime(c)}</span><span style="display:flex;gap:4px;align-items:center">${wxLine(c)}</span></div>
-      <div class="counts">${cn}</div></button>`}).join("");
+      <div class="counts">${cn}</div></div>`}).join("");
+  $("#mineBtn").textContent=`My Centers${follow.size?" ("+follow.size+")":""}`;
 }
-$("#gal").addEventListener("click",e=>{const b=e.target.closest(".ccard");if(b)openCity(b.dataset.city)});
+$("#gal").addEventListener("click",e=>{
+  const bl=e.target.closest("[data-follow]");
+  if(bl){e.stopPropagation();const c=bl.dataset.follow;follow.has(c)?follow.delete(c):follow.add(c);store.set("cgb2-follow",[...follow]);
+    if(!follow.size&&S.mine){setMine(false);}else if(S.mine)renderAll();else renderGallery();
+    toast(follow.has(c)?`Following ${c}`:`Stopped following ${c}`);return}
+  const b=e.target.closest(".ccard");if(b)openCity(b.dataset.city)});
+$("#gal").addEventListener("keydown",e=>{const b=e.target.closest(".ccard");if(b&&e.target===b&&(e.key==="Enter"||e.key===" ")){e.preventDefault();openCity(b.dataset.city)}});
+function setMine(on){
+  if(on&&!follow.size){toast("Use the bell on a Center to follow it first");return}
+  S.mine=on;store.set("cgb2-mine",on);
+  document.querySelectorAll(".follow-tg button").forEach(b=>b.setAttribute("aria-pressed",(b.dataset.mine==="1")===on));
+  renderAll();toast(on?`Showing your ${follow.size} Centers`:"Showing all ten Centers");
+}
+document.querySelector(".follow-tg").addEventListener("click",e=>{const b=e.target.closest("button");if(b)setMine(b.dataset.mine==="1")});
 
 /* ===================== matrix ===================== */
 function renderMatrix(){
@@ -760,6 +856,7 @@ function renderChips(){
 }
 $("#chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const l=b.dataset.level;S.levels.has(l)?S.levels.delete(l):S.levels.add(l);renderChips();renderFeed()});
 function match(i){
+  if(!mineOk(i))return false;
   if(S.levels.size&&!S.levels.has(i.level))return false;
   if(S.city&&i.city!==S.city)return false;
   if(S.cat&&i.cat!==S.cat)return false;
@@ -832,7 +929,7 @@ function renderDates(){
 }
 $("#dates").addEventListener("click",e=>{const b=e.target.closest("button");if(b)openCity(b.dataset.city)});
 function renderFollow(){
-  const v=FOLLOW.filter(f=>inL(f));const n=v.filter(f=>done[f.id]).length;
+  const v=FOLLOW.filter(f=>inL(f)&&(!S.mine||f.cities.some(c=>follow.has(c))));const n=v.filter(f=>done[f.id]).length;
   const r=22,C=2*Math.PI*r,pct=v.length?n/v.length:0;
   $("#fuh").innerHTML=`<svg width="56" height="56" viewBox="0 0 56 56"><circle class="ringbg" cx="28" cy="28" r="${r}" fill="none" stroke-width="6"/><circle class="ringfg" cx="28" cy="28" r="${r}" fill="none" stroke-width="6" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-pct)}" transform="rotate(-90 28 28)"/><text x="28" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor">${Math.round(pct*100)}%</text></svg><div class="txt"><b>${n} of ${v.length}</b>done for this view</div>`;
   $("#followups").innerHTML=v.map(f=>`<li class="${done[f.id]?"done":""}"><label><input type="checkbox" data-f="${f.id}" ${done[f.id]?"checked":""}><span><span class="tx">${esc(f.text)}</span><span class="who">${f.lenses.map(l=>LN[l]).join(" · ")}</span></span></label></li>`).join("");
@@ -873,14 +970,74 @@ function stepCity(k){const i=CITIES.indexOf(S.drawer);openCity(CITIES[(i+k+CITIE
 function closeCity(){S.drawer=null;const d=$("#drawer");d.classList.remove("show");d.setAttribute("aria-hidden","true");$("#scrim").classList.remove("show");document.body.style.overflow="";d3.selectAll("#mk g.mk").classed("on",false)}
 $("#scrim").onclick=closeCity;
 
+/* ===================== synthesis ===================== */
+const ICO={
+ cu:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>',
+ ctx:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+ opp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.4l6-.8z"/></svg>',
+ cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>'
+};
+const SYN={
+ all:[["cu","Columbia signal","One item touches Columbia directly: a Jerusalem Post op-ed on the Tel Aviv Global Center. Review and monitor; no public response is suggested."],
+      ["ctx","Operating picture","Seven cities carry action items, mostly movement and weather: Istanbul closures, the Athens storm warning, Mumbai rail blocks, clashes near Rio, Paris protests and Jordan-Syria border activity."],
+      ["opp","Opportunity","Kenyan universities reopen on 2 November. HKU in Beijing, 4EU+ in Paris and two Santiago institutions offer convening models worth borrowing."]],
+ comms:[["cu","Columbia signal","The Jerusalem Post op-ed is the one Columbia-specific story. It describes the dual-degree programme favourably while criticising scrutiny of it."],
+      ["ctx","Media context","Contested politics in Israel and Brazil and France's protest wave are the national stories most likely to shape coverage this week."],
+      ["opp","Story angles","Public-facing academic work in Beijing, Paris and Santiago gives ready examples for Columbia Global programming stories."]],
+ ops:[["cu","Centers","No incident at any Center was reported in this scan. Every action item concerns getting around the city."],
+      ["ctx","Today","Istanbul road closures, Athens storms, Mumbai rail blocks and clashes near Rio. Check Paris transport after Saturday's protests and the Jordan-Syria border before regional travel."],
+      ["cal","Ahead","Rio holiday on 2 November, Beijing drone rules from 15 November and a six-hour Mumbai airport closure on 19 November."]],
+ academic:[["cu","Columbia signal","The Tel Aviv op-ed discusses the Columbia and Tel Aviv University dual degree; useful background for partner conversations."],
+      ["ctx","Sector context","Higher education is under pressure in France, Chile, Greece and India, while Kenya's lecturers' strike is ending."],
+      ["opp","Opportunity","Nairobi partners reopen on 2 November. Tel Aviv University and Clalit have an open grant call; Jordan and Iraq signed research agreements."]]
+};
+function renderSyn(){
+  $("#syn").title=S.mine?"Summary covers all ten Centers":"";
+  $("#syn").innerHTML=SYN[S.lens].map(([ic,lb,tx],n)=>`<div style="animation-delay:${n*.06}s"><div class="lb"><i>${ICO[ic]}</i>${lb}</div><p>${esc(tx)}</p></div>`).join("");
+}
+
+/* ===================== pulse ===================== */
+function renderPulse(){
+  const v=vis();
+  const cats=Object.keys(CATS).map(k=>[CATS_LONG[k],v.filter(i=>i.cat===k).length]).sort((a,b)=>b[1]-a[1]);
+  const out={};v.forEach(i=>i.src.forEach(s=>{if(!/calendar|events|summary/i.test(s[0]))out[s[0]]=(out[s[0]]||0)+1}));
+  const top=Object.entries(out).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,5);
+  const mx=Math.max(1,...cats.map(c=>c[1])),mo=Math.max(1,...top.map(c=>c[1]));
+  const row=(l,n,m)=>`<div class="pr"><span>${esc(l)}</span><div class="tr"><div class="fl" style="width:${n/m*100}%"></div></div><b>${n}</b></div>`;
+  $("#pulse").innerHTML=`<div class="pulse-sub" style="margin-top:0">By topic</div>${cats.map(c=>row(c[0],c[1],mx)).join("")}<div class="pulse-sub">Most cited outlets</div>${top.map(c=>row(c[0],c[1],mo)).join("")}<p style="font-size:12.5px;color:var(--faint);margin:10px 0 0">${Object.keys(out).length} outlets across ${new Set(v.map(i=>i.city)).size} cities in this view.</p>`;
+}
+
+/* ===================== share ===================== */
+const pop=$("#sharePop");
+$("#shareBtn").onclick=e=>{e.stopPropagation();const on=!pop.classList.contains("show");pop.classList.toggle("show",on);$("#shareBtn").setAttribute("aria-expanded",on)};
+document.addEventListener("click",e=>{if(!e.target.closest("#sharePop"))pop.classList.remove("show")});
+async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(e){const ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand("copy")}catch(x){}ta.remove();return ok}}
+function digest(){
+  const v=vis();const view=S.lens==="all"?"Full briefing":LN[S.lens]+" view";
+  const L=["Columbia Global | Morning Intelligence Briefing",`Sunday 1 November 2026 · ${view}${S.mine?" · My Centers":""}`,""];
+  SYN[S.lens].forEach(([,lb,tx])=>L.push(`${lb.toUpperCase()}: ${tx}`));
+  L.push("","FIVE THINGS TO KNOW");
+  topFive().forEach((i,n)=>L.push(`${n+1}. ${i.city}: ${i.title}`,`   ${i.impl||i.body}`,`   Source: ${i.src.map(s=>s[0]+(s[1]?", "+s[1]:"")).join("; ")}`));
+  const d=DATES.filter(x=>inL(x)&&(!S.mine||follow.has(x.city)));
+  if(d.length){L.push("","DATES AHEAD");d.forEach(x=>L.push(`- ${x.d}: ${x.what} (${x.where||x.city})`))}
+  const f=FOLLOW.filter(x=>inL(x)&&(!S.mine||x.cities.some(c=>follow.has(c))));
+  if(f.length){L.push("","FOLLOW-UPS");f.forEach(x=>L.push(`[${done[x.id]?"x":" "}] ${x.text}`))}
+  L.push("",`Full dashboard: ${location.origin}${location.pathname}?view=${S.lens}`);
+  return L.join("\n");
+}
+$("#copyDigest").onclick=async()=>{pop.classList.remove("show");toast(await copyText(digest())?"Email summary copied":"Copy failed")};
+$("#copyLink").onclick=async()=>{pop.classList.remove("show");toast(await copyText(`${location.origin}${location.pathname}?view=${S.lens}`)?"Link copied":"Copy failed")};
+$("#printBtn").onclick=()=>{pop.classList.remove("show");document.querySelectorAll(".reveal").forEach(e=>e.classList.add("in"));setTimeout(()=>print(),100)};
+
 /* ===================== global ===================== */
-function renderAll(anim){renderHero();renderMap();renderClocks();renderTop();renderGallery();renderMatrix();renderChips();renderFeed();renderDates();renderFollow();if(S.drawer)openCity(S.drawer)}
+function renderAll(anim){renderSyn();renderPulse();renderHero();renderMap();renderClocks();renderTop();renderGallery();renderMatrix();renderChips();renderFeed();renderDates();renderFollow();if(S.drawer)openCity(S.drawer)}
 document.addEventListener("keydown",e=>{
   const typing=/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName);
   if(e.key==="Escape"){if(S.drawer)closeCity();else if(typing)document.activeElement.blur();return}
   if(typing||e.metaKey||e.ctrlKey||e.altKey)return;
   if(S.drawer&&(e.key==="ArrowRight"||e.key==="ArrowLeft")){stepCity(e.key==="ArrowRight"?1:-1);return}
   if(/^[1-4]$/.test(e.key)){setLens(LENSES[+e.key-1].id);return}
+  if(e.key==="m"||e.key==="M"){setMine(!S.mine);return}
   if(e.key==="/"){e.preventDefault();focusSearch()}
 });
 function focusSearch(){document.getElementById("feedSec").scrollIntoView();setTimeout(()=>$("#q").focus({preventScroll:true}),300)}
@@ -891,6 +1048,7 @@ const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.t
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in")),1500);
 
+if(S.mine)document.querySelectorAll(".follow-tg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.mine==="1"));
 renderSeg();renderAll();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(movePill);
 new ResizeObserver(movePill).observe(document.getElementById("seg"));
