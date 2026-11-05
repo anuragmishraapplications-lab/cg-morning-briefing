@@ -144,6 +144,35 @@ img{display:block;max-width:100%}
   .gal{grid-template-columns:repeat(5,1fr)}
 }
 
+
+/* ===== light scheme (header, hero, map, clocks) ===== */
+:root[data-theme="light"] .bar{background:rgba(255,255,255,.86);color:var(--text);border-bottom:1px solid var(--border);box-shadow:0 1px 0 rgba(255,255,255,.6),0 6px 20px -14px rgba(42,63,143,.35)}
+:root[data-theme="light"] .bar .cgmark{color:var(--text)} :root[data-theme="light"] .bar .cgmark .plus,:root[data-theme="light"] .bar .cgmark .s1,:root[data-theme="light"] .bar .cgmark .s2{color:var(--navy)}
+:root[data-theme="light"] .brand-sep{background:var(--border)} :root[data-theme="light"] .brand-prod{color:var(--muted)}
+:root[data-theme="light"] .seg{background:#eef2fa;border-color:#e1e7f4}
+:root[data-theme="light"] .seg button{color:var(--muted)} :root[data-theme="light"] .seg button[aria-selected="true"]{color:#fff}
+:root[data-theme="light"] .seg .pill{background:linear-gradient(135deg,var(--navy),#3d55b0);box-shadow:0 6px 16px -6px rgba(42,63,143,.6)}
+:root[data-theme="light"] .ghost{border-color:var(--border);background:#fff;color:var(--text)} :root[data-theme="light"] .ghost:hover{background:#f2f5fb}
+:root[data-theme="light"] .hero{color:var(--text);background:radial-gradient(900px 420px at 88% -10%,rgba(114,135,226,.20),transparent 60%),radial-gradient(800px 420px at -5% 105%,rgba(192,214,223,.55),transparent 60%),radial-gradient(500px 300px at 45% 30%,rgba(221,131,40,.06),transparent 70%),linear-gradient(180deg,#f6f8fd,#edf2fa)}
+:root[data-theme="light"] .hero::before{background-image:linear-gradient(rgba(42,63,143,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(42,63,143,.045) 1px,transparent 1px)}
+:root[data-theme="light"] .exemplar{color:var(--muted);background:#fff;border-color:var(--border)}
+:root[data-theme="light"] .hero h1{color:var(--navy-ink)} :root[data-theme="light"] .hero h1 em{color:var(--peri)}
+:root[data-theme="light"] .hero-sub{color:var(--muted)} :root[data-theme="light"] .hero-lede{color:var(--text)} :root[data-theme="light"] .hero-lede strong{color:var(--action)}
+:root[data-theme="light"] .stat{background:#fff;border-color:var(--border);color:var(--text);box-shadow:var(--shadow-sm)} :root[data-theme="light"] .stat:hover{background:#fff;box-shadow:var(--shadow)}
+:root[data-theme="light"] .stat .l{color:var(--muted)} :root[data-theme="light"] .stat .n span{opacity:.45!important}
+:root[data-theme="light"] .sevbar{background:#e3e8f3} :root[data-theme="light"] .sevlegend{color:var(--muted)}
+:root[data-theme="light"] .mapcard{background:rgba(255,255,255,.75);border-color:#e1e7f4;box-shadow:0 20px 50px -30px rgba(42,63,143,.35)}
+:root[data-theme="light"] .map-h{color:var(--muted)}
+:root[data-theme="light"] .land{fill:#dfe6f3;stroke:#fff;stroke-width:.6}
+:root[data-theme="light"] .grat{stroke:rgba(42,63,143,.06)}
+:root[data-theme="light"] .arc{opacity:.7}
+:root[data-theme="light"] .mk text{fill:var(--navy-ink);stroke:rgba(255,255,255,.95);opacity:1}
+:root[data-theme="light"] .ny-dot{fill:var(--navy)} :root[data-theme="light"] .ny-txt{fill:var(--navy)}
+:root[data-theme="light"] .clocks{background:rgba(255,255,255,.7);border-top-color:#e1e7f4;border-bottom:1px solid #e1e7f4}
+:root[data-theme="light"] .clk{color:var(--text);border-right-color:#e8ecf5} :root[data-theme="light"] .clk:hover{background:#fff}
+:root[data-theme="light"] .clk .c{color:var(--muted)} :root[data-theme="light"] .clk .w{color:var(--muted)} :root[data-theme="light"] .clk .day{color:var(--faint)}
+:root[data-theme="light"] .tcard::after{background:linear-gradient(180deg,rgba(42,63,143,.05) 0%,rgba(22,36,90,.35) 40%,rgba(16,26,66,.88) 80%)}
+
 /* ===== hero ===== */
 .hero{position:relative;color:#fff;background:radial-gradient(1200px 500px at 80% -10%,rgba(114,135,226,.35),transparent 60%),radial-gradient(700px 400px at 0% 110%,rgba(192,214,223,.18),transparent 60%),linear-gradient(180deg,var(--navy-ink),var(--navy-deep) 70%,#1d2f72);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
@@ -179,6 +208,7 @@ img{display:block;max-width:100%}
 .mk:hover .core,.mk.on .core{r:8}
 .mk .pulse{fill:none;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:pulse 2.2s ease-out infinite}
 @keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(3.2);opacity:0}}
+.ny-dot{fill:var(--ice)} .ny-txt{fill:var(--ice)}
 .mk text{fill:#fff;font-size:11px;font-weight:600;paint-order:stroke;stroke:rgba(14,26,69,.9);stroke-width:3px;pointer-events:none;opacity:.85}
 .tip{position:fixed;z-index:60;pointer-events:none;width:240px;border-radius:14px;overflow:hidden;background:var(--surface);color:var(--text);box-shadow:var(--shadow-lg);opacity:0;transform:translateY(6px) scale(.98);transition:opacity .15s,transform .15s}
 .tip.show{opacity:1;transform:none}
@@ -644,7 +674,9 @@ const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.
 let done=store.get("cgb2-done",{}), saved=new Set(store.get("cgb2-saved",[])), follow=new Set(store.get("cgb2-follow",[]));
 S.mine=store.get("cgb2-mine",false)&&follow.size>0;
 const L0=new URLSearchParams(location.search).get("view")||store.get("cgb2-lens","all"); if(LENSES.some(l=>l.id===L0)) S.lens=L0;
-const th=store.get("cgb2-theme",null); if(th) document.documentElement.dataset.theme=th;
+const th=store.get("cgb2-theme",null);const mq=matchMedia("(prefers-color-scheme: dark)");
+document.documentElement.dataset.theme=th||(mq.matches?"dark":"light");
+mq.addEventListener&&mq.addEventListener("change",e=>{if(!store.get("cgb2-theme",null))document.documentElement.dataset.theme=e.matches?"dark":"light"});
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -702,7 +734,7 @@ async function drawMap(){
   proj=d3.geoNaturalEarth1().fitExtent([[10,30],[W-10,H-10]],{type:"MultiPoint",coordinates:[[-82,-42],[128,57],[-82,57],[128,-42]]});
   const path=d3.geoPath(proj);
   const defs=svg.append("defs");
-  const g=defs.append("linearGradient").attr("id","arcgrad");g.append("stop").attr("offset","0").attr("stop-color","#c0d6df").attr("stop-opacity",.1);g.append("stop").attr("offset","1").attr("stop-color","#c0d6df").attr("stop-opacity",.9);
+  const g=defs.append("linearGradient").attr("id","arcgrad");g.append("stop").attr("offset","0").style("stop-color","var(--peri)").attr("stop-opacity",.15);g.append("stop").attr("offset","1").style("stop-color","var(--peri)").attr("stop-opacity",.95);
   svg.append("path").attr("class","grat").attr("d",path(d3.geoGraticule10()));
   try{
     const world=await (await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json")).json();
@@ -711,8 +743,8 @@ async function drawMap(){
   const ny=proj([NY.lon,NY.lat]);
   svg.append("g").attr("id","arcs");
   svg.append("g").attr("id","mk");
-  svg.append("circle").attr("cx",ny[0]).attr("cy",ny[1]).attr("r",4).attr("fill","#c0d6df");
-  svg.append("text").attr("x",ny[0]+8).attr("y",ny[1]+4).attr("fill","#c0d6df").attr("font-size",11).attr("font-weight",600).text("New York");
+  svg.append("circle").attr("class","ny-dot").attr("cx",ny[0]).attr("cy",ny[1]).attr("r",4);
+  svg.append("text").attr("class","ny-txt").attr("x",ny[0]+8).attr("y",ny[1]+4).attr("font-size",11).attr("font-weight",600).text("New York");
   mapReady=true;renderMap();
 }
 function renderMap(){
@@ -731,8 +763,8 @@ function renderMap(){
      .on("click",(e,d)=>{hideTip();openCity(d.c)}).on("keydown",(e,d)=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openCity(d.c)}});
   const all=ent.merge(sel);
   all.attr("aria-label",d=>`${d.c}: ${d.it.length} items`);
-  all.select(".core").transition().duration(400).attr("r",d=>d.it.length?4+Math.sqrt(d.it.length)*1.6:3.5).attr("fill",d=>d.w?HEX[d.w]:"#55608a");
-  all.select(".pulse").attr("r",d=>d.w==="action"?6:0).attr("stroke",d=>d.w?HEX[d.w]:"none").style("display",d=>d.w==="action"?null:"none");
+  all.select(".core").style("fill",d=>d.w?COL[d.w]:"var(--faint)").transition().duration(400).attr("r",d=>d.it.length?4+Math.sqrt(d.it.length)*1.6:3.5);
+  all.select(".pulse").attr("r",d=>d.w==="action"?6:0).style("stroke",d=>d.w?COL[d.w]:"none").style("display",d=>d.w==="action"?null:"none");
 }
 const tip=$("#tip");
 function showTip(e,c){
