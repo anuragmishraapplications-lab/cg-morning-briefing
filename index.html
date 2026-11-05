@@ -78,7 +78,7 @@ img{display:block;max-width:100%}
 .ghost svg{width:17px;height:17px}
 @media (max-width:1060px){.seg button kbd{display:none}.logo-t span{display:none}}
 @media (max-width:860px){
-  .bar-in{flex-wrap:wrap;height:auto;padding:10px 0;gap:10px}
+  .bar-in{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;gap:10px}
   .seg{order:3;width:100%;margin:0;overflow-x:auto;scrollbar-width:none}
   .seg button{flex:1;padding:7px 10px;font-size:13px}
   .bar-tools{margin-left:auto}
@@ -88,7 +88,7 @@ img{display:block;max-width:100%}
 /* ===== hero ===== */
 .hero{position:relative;color:#fff;background:radial-gradient(1200px 500px at 80% -10%,rgba(114,135,226,.35),transparent 60%),radial-gradient(700px 400px at 0% 110%,rgba(192,214,223,.18),transparent 60%),linear-gradient(180deg,var(--navy-ink),var(--navy-deep) 70%,#1d2f72);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(180deg,#000,transparent 85%)}
-.hero-in{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;align-items:center;padding:34px 0 26px}
+.hero-in{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;align-items:center;padding-top:34px;padding-bottom:26px}
 @media (max-width:1000px){.hero-in{grid-template-columns:1fr}}
 .exemplar{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ice);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:4px 12px 4px 6px}
 .exemplar b{background:var(--sig);color:#fff;border-radius:999px;padding:1px 8px;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
@@ -141,7 +141,7 @@ img{display:block;max-width:100%}
 .clk .day{font-size:10.5px;color:rgba(255,255,255,.45);margin-left:4px}
 
 /* ===== sections ===== */
-main{padding:30px 0 60px}
+main{padding-top:30px;padding-bottom:60px}
 .sec{margin-bottom:38px}
 .sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:14px}
 .sec-h h2{font-family:"Playfair Display",Georgia,serif;font-size:26px;line-height:1.15;margin:0}
@@ -192,7 +192,7 @@ main{padding:30px 0 60px}
 .cols{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:24px;align-items:start}
 @media (max-width:1080px){.cols{grid-template-columns:1fr}}
 .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
-.panel-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 18px 12px}
+.panel-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:16px 18px 12px}
 .panel-h h3{margin:0;font-size:16px}
 .panel-h small{color:var(--muted);font-size:13px}
 .panel-b{padding:0 18px 18px}
@@ -228,7 +228,7 @@ main{padding:30px 0 60px}
 .search input:focus{outline:2px solid var(--peri);outline-offset:0;border-color:transparent}
 .search svg{position:absolute;left:10px;top:9px;width:17px;height:17px;color:var(--faint)}
 .toggle{display:inline-flex;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--surface)}
-.toggle button{border:0;background:none;padding:6px 11px;font-size:13px;font-weight:600;color:var(--muted)}
+.toggle button{white-space:nowrap;border:0;background:none;padding:6px 11px;font-size:13px;font-weight:600;color:var(--muted)}
 .toggle button[aria-pressed="true"]{background:var(--brand-soft);color:var(--brand)}
 .active-filters{display:flex;gap:6px;flex-wrap:wrap;padding:10px 18px 0}
 .af{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;background:var(--brand-soft);color:var(--brand);border-radius:999px;padding:3px 6px 3px 11px;border:0;font-weight:600}
@@ -327,7 +327,7 @@ main{padding:30px 0 60px}
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
 
 /* misc */
-footer{border-top:1px solid var(--border);padding:24px 0 40px;color:var(--faint);font-size:12.5px}
+footer{border-top:1px solid var(--border);padding-top:24px;padding-bottom:40px;color:var(--faint);font-size:12.5px}
 footer a{color:var(--muted)}
 .kb{position:fixed;left:50%;bottom:22px;z-index:90;transform:translate(-50%,30px);opacity:0;background:var(--navy-ink);color:#fff;border-radius:999px;padding:9px 16px;font-size:13.5px;box-shadow:var(--shadow-lg);transition:all .25s;pointer-events:none}
 .kb.show{opacity:1;transform:translate(-50%,0)}
@@ -473,7 +473,7 @@ const COL={action:"var(--action)",sig:"var(--sig)",opp:"var(--opp)",info:"var(--
 const HEX={action:"#ff6b5e",sig:"#f2a457",opp:"#9cc68a",info:"#aab3c9"};
 
 const CITY={
- "Amman":{k:"amman",country:"Jordan",tz:"Asia/Amman",lat:31.95,lon:35.93,lbl:[-10,4,"end"]},
+ "Amman":{k:"amman",country:"Jordan",tz:"Asia/Amman",lat:31.95,lon:35.93,lbl:[10,2,"start"]},
  "Athens":{k:"athens",country:"Greece",tz:"Europe/Athens",lat:37.98,lon:23.73,lbl:[-10,4,"end"]},
  "Beijing":{k:"beijing",country:"China",tz:"Asia/Shanghai",lat:39.90,lon:116.40,lbl:[10,4,"start"]},
  "Istanbul":{k:"istanbul",country:"Türkiye",tz:"Europe/Istanbul",lat:41.01,lon:28.98,lbl:[8,-7,"start"]},
@@ -482,7 +482,7 @@ const CITY={
  "Paris":{k:"paris",country:"France",tz:"Europe/Paris",lat:48.86,lon:2.35,lbl:[-10,4,"end"]},
  "Rio de Janeiro":{k:"rio",country:"Brazil",tz:"America/Sao_Paulo",lat:-22.91,lon:-43.17,lbl:[10,4,"start"]},
  "Santiago":{k:"santiago",country:"Chile",tz:"America/Santiago",lat:-33.45,lon:-70.67,lbl:[-10,4,"end"]},
- "Tel Aviv":{k:"telaviv",country:"Israel",tz:"Asia/Jerusalem",lat:32.09,lon:34.78,lbl:[10,12,"start"]}
+ "Tel Aviv":{k:"telaviv",country:"Israel",tz:"Asia/Jerusalem",lat:32.09,lon:34.78,lbl:[-8,14,"end"]}
 };
 const CITIES=Object.keys(CITY);
 const NY={lat:40.71,lon:-74.01};
@@ -889,8 +889,11 @@ $("#themeBtn").onclick=()=>{const r=document.documentElement;const cur=r.dataset
 $("#credits").innerHTML="Photos from Wikimedia Commons: "+CITIES.map(c=>{const x=CREDITS[CITY[c].k];return x&&x[0]?`${esc(c)} by <a href="${x[2]}" target="_blank" rel="noopener">${esc(x[0])}</a> (${esc(x[1])})`:""}).filter(Boolean).join("; ")+".";
 const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target)}}),{threshold:.08});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+setTimeout(()=>document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in")),1500);
 
 renderSeg();renderAll();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(movePill);
+new ResizeObserver(movePill).observe(document.getElementById("seg"));
 setInterval(()=>{renderClocks();document.querySelectorAll(".ccard .tm").forEach((el,i)=>el.textContent=localTime(CITIES[i]))},30000);
 if(window.d3&&window.topojson) drawMap(); else $("#map").outerHTML='<p style="padding:40px;color:var(--ice)">Map could not load.</p>';
 loadWeather();
